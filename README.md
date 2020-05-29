@@ -1,6 +1,6 @@
 # Imersao-CSS
 
-Hello, visitor!!
+Hey There!!
 
 Here in this repository you can find step by step how the project was developed.
 
