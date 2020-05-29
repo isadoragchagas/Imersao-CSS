@@ -1,0 +1,316 @@
+/* soft reset css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('./img/fd67de43ef782a7d2de29ca0576ee9c1.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: Source Code Pro;
+  height: 100vh;
+  font-size: 10px;
+}
+
+/* se a tela tiver pelo menos 400px vai carregar esses estilos breakpoint */
+@media (min-width: 400px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+header {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu {
+  background-color: white;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  z-index: 1;
+}
+
+.menu ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu li {
+  list-style: none;
+}
+
+.menu a {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.3em;
+  display: block;
+  padding: 10px 20px;
+  transition: background-color 3s, color 2s;
+}
+
+.menu a:active,
+.menu a:hover {
+  background-color: aquamarine;
+  color: rgb(218, 53, 149);
+}
+
+a {
+  color: rgb(76, 171, 177);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.titulo h2 {
+  overflow: hidden; 
+  border-right: .15em solid rgb(170, 118, 184); 
+  white-space: nowrap; 
+  margin: 0 auto; 
+  letter-spacing: .15em; 
+  animation: 
+    typing 5s steps(40, end),
+    blink-caret 1s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: rgb(170, 118, 184); }
+}
+
+/* .titulo {
+  transform: scale(0.2) translateY(50vh);
+  opacity: 0;
+
+  animation: linear 2s animacaoTitulo forwards;
+} */
+
+/* @keyframes animacaoTitulo {
+  0%{
+    transform: scale(0.2) translateY(50vh);
+    opacity: 0;
+  }
+  100%{
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+} */
+
+.site-subtitle,
+.site-title {
+  color: rgb(187, 120, 206);
+  text-align: center;
+}
+
+.site-title {
+  font-size: 5em;
+  font-family: 'Dancing Script', cursive;
+}
+
+.site-subtitle {
+  /* font-family: 'Baloo Da 2', cursive; */
+  /* font-style: italic; */
+  line-height: normal;
+}
+
+.sobre,
+.portfolio,
+.contato {
+  min-height: 100vh;
+  padding: 2em;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.sobre h2,
+.portfolio h2 {
+  color: rgb(226, 73, 193);
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 2em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  /* text-align: center; */
+  /* padding: 1em; */
+}
+
+.sobre p {
+  color: rgb(200, 147, 214);
+  font-size: 1.3em;
+  margin-top: 2em;
+  margin-bottom: 2.4em;
+  text-indent: 1.2em;
+  text-align: justify;
+}
+
+.sobre a {
+  text-decoration: underline;
+}
+
+.sobre .avatar {
+  float: right;
+  margin-left: 4em;
+}
+
+.sobre .avatar img {
+  border-radius: 50%;
+  box-shadow: 0em 0em 4.5em -0.1em rgb(226, 89, 184);
+  width:317px;
+  height:300px;
+  /* clip-path: circle(44.6% at 50% 50%); */
+}
+
+.portfolio .grid {
+  display: grid;
+  gap: 6em;
+  /* grid-template-columns: 270px 270px; */
+}
+
+@media (min-width: 560px) {
+  .portfolio .grid {
+    grid-template-columns: 200px 200px;
+  }
+}
+
+@media (min-width: 880px) {
+  .portfolio .grid {
+    grid-template-columns: repeat(2, 200px);
+    align-content: center;
+    justify-content: center;
+    height: calc(100vh - 4em - 48px - 1.5em);
+  }
+}
+
+.portfolio figure {
+  text-align: center;
+}
+
+.portfolio figcaption {
+  font-size: 16px;
+  color: rgb(232, 126, 210);
+}
+
+.img-portfolio {
+  border-radius: 2em;
+  height: 200px;
+  width: 200px; 
+  object-fit: fill;
+  object-position: bottom;
+  transition: transform 500ms;
+}
+
+/* .img-avatar:hover {
+  transform: scale(1.2) rotate(2deg);
+} */
+
+.flip-card {
+  height: 200px;
+  width: 200px;
+  perspective: 600px;
+}
+
+.card {
+  height: 200px;
+  width: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 2s;
+}
+
+.flip-card:hover .card {
+  transform: rotateY(180deg);
+}
+
+.card-front, 
+.card-back {
+  backface-visibility: hidden;
+  border-radius: 20%;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.card-back {
+  display: flex;
+  font-size: 16px;
+  text-align: center;
+  color: rgb(29, 27, 28);
+  align-items: center;
+  background-color: rgb(242, 247, 242);
+  height: 200px;
+  width: 200px;
+  transform: rotateY(180deg);
+}
+
+.contato .icons {
+  text-align: center;
+}
+
+.contato h2 {
+  color: rgb(226, 73, 193);
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 2em;
+  margin-bottom: 3em;
+  margin-top: 1em;
+}
+
+.contato p {
+  color: rgb(215, 138, 236);
+  font-size: 1.2em;
+  margin-bottom: 3em;
+  text-indent: 1.4em;
+  text-align: center;
+}
+
+.contato a {
+  color: rgb(236, 63, 184);
+  font-size: 5.5em;
+  transition: text-shadow 1s;
+}
+
+.contato a:active,
+.contato a:hover {
+  text-decoration: none;
+  text-shadow: 0 0 10px whitesmoke;
+}
+
+.tks h3 {
+  font-size: 14px;
+  color: rgb(245, 60, 174);
+  margin-top: 14em;
+  margin-left: 60em;
+}
+
+#scrollToTop {
+  padding: 15px 20px;
+  position: fixed;
+  bottom: 8px;
+  right: 8px;
+  display: none;
+  color: rgb(255, 255, 255);
+  border: 3px solid rgb(17, 241, 226);
+  font-size: 0.8em;
+  opacity: 0.5;
+  transition: opacity 0.5s;
+}
+
+#scrollToTop:hover,
+#scrollToTop:active {
+  opacity: 0.8;
+}
